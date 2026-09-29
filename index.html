@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WavePlay - Music Player</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-wave-square"></i>
+            </div>
+
+            <span>Wave<span>Play</span></span>
+        </div>
+
+        <nav class="side-nav">
+
+            <p class="nav-title">MENU</p>
+
+            <a href="#" class="nav-link active" data-view="all">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="#" class="nav-link" data-view="all">
+                <i class="fa-solid fa-compass"></i>
+                <span>Discover</span>
+            </a>
+
+            <a href="#" class="nav-link" data-view="favorites">
+                <i class="fa-solid fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+
+            <a href="#" class="nav-link" data-view="recent">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Recently Played</span>
+            </a>
+
+            <p class="nav-title playlist-title">
+                YOUR PLAYLISTS
+            </p>
+
+                    <a href="#" class="nav-link" data-view="all">
+                <i class="fa-solid fa-circle-plus"></i>
+                <span>Create Playlist</span>
+            </a>
+
+            <a href="#" class="nav-link" data-view="favorites">
+                <i class="fa-solid fa-music"></i>
+                <span>My Favorites</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-headphones"></i>
+                <span>Chill Vibes</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </button>
+
+            <button>
+                <i class="fa-solid fa-circle-question"></i>
+                Help
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search songs, artists..."
+                >
+
+                <button
+                    id="clearSearch"
+                    class="clear-search"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <div class="profile">
+
+                <button class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </button>
+
+                <div class="avatar">
+                    JD
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>John Doe</strong>
+
+                    <small>
+                        Music Lover
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="content">
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <p class="hero-small">
+
+                        <i class="fa-solid fa-headphones"></i>
+
+                        YOUR DAILY MIX
+
+                    </p>
+
+                    <h1>
+                        Music that<br>
+                        <span>moves you.</span>
+                    </h1>
+
+                    <p class="hero-description">
+
+                        Discover new sounds, revisit your
+                        favorites, and let the music take
+                        you somewhere.
+
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="primary-btn"
+                            id="heroPlay"
+                        >
+
+                            <i class="fa-solid fa-play"></i>
+
+                            Play Now
+
+                        </button>
+
+                        <button class="secondary-btn" id="heroFavorite">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Add to Playlist
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK PICKS ================= -->
+
+            <section class="section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Quick Picks
+                        </h2>
+
+                        <p>
+                            Music selected for your mood
+                        </p>
+
+                    </div>
+
+                    <button class="see-all" id="seeAllSongs">
+
+                        See all
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="album-grid">
+
+                    <div
+                        class="album-card"
+                        data-song="0"
+                    >
+
+                        <div class="album-image">
+
+                            <img
+                                src="images/Anendlessocean-Blind.webp"
+                                alt="Blind by Anendlessocean"
+                            >
+
+                            <button class="card-play">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            Blind
+                        </h3>
+
+                        <p>
+                            Anendlessocean
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="album-card"
+                        data-song="1"
+                    >
+
+                        <div class="album-image">
+
+                            <img
+                                src="images/David-Jones-David-Eze-Yoyo.webp"
+                                alt="Eze Yoyo by David Jones and David Eze"
+                            >
+
+                            <button class="card-play">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            Eze Yoyo
+                        </h3>
+
+                        <p>
+                            David Jones, David Eze
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="album-card"
+                        data-song="2"
+                    >
+
+                        <div class="album-image">
+
+                            <img
+                                src="images/I-SURRENDER-HILLSONG-scaled.webp"
+                                alt="I Surrender by Hillsong Worship"
+                            >
+
+                            <button class="card-play">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            I Surrender
+                        </h3>
+
+                        <p>
+                            Hillsong Worship
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="album-card"
+                        data-song="3"
+                    >
+
+                        <div class="album-image">
+
+                            <img
+                                src="images/dunsin-open-up-scaled.webp"
+                                alt="Open Up by Dunsin Oyekan"
+                            >
+
+                            <button class="card-play">
+
+                                <i class="fa-solid fa-play"></i>
+
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            Open Up
+                        </h3>
+
+                        <p>
+                            Dunsin Oyekan
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SONG LIST ================= -->
+
+            <section class="section songs-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            All Songs
+                        </h2>
+
+                        <p id="songCount">
+                            17 songs
+                        </p>
+
+                    </div>
+
+                    <div class="sort">
+
+                        <button>
+
+                            Recently Added
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="song-list"
+                    id="songList"
+                >
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= MUSIC PLAYER ================= -->
+
+    <footer class="player">
+
+        <div class="current-song">
+
+            <div class="mini-art">
+
+                <img
+                    id="playerImage"
+                    src="images/Anendlessocean-Blind.webp"
+                    alt="Current song"
+                >
+
+            </div>
+
+            <div class="current-info">
+
+                <strong id="playerTitle">
+                    Blind
+                </strong>
+
+                <span id="playerArtist">
+                    Anendlessocean
+                </span>
+
+            </div>
+
+            <button
+                class="player-heart"
+                id="playerFavorite"
+            >
+
+                <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- PLAYER CONTROLS -->
+
+        <div class="player-center">
+
+            <div class="controls">
+
+                <button
+                    id="shuffleBtn"
+                    title="Shuffle"
+                >
+
+                    <i class="fa-solid fa-shuffle"></i>
+
+                </button>
+
+                <button
+                    id="previousBtn"
+                    title="Previous"
+                >
+
+                    <i class="fa-solid fa-backward-step"></i>
+
+                </button>
+
+                <button
+                    class="play-btn"
+                    id="playBtn"
+                    title="Play"
+                >
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+                <button
+                    id="nextBtn"
+                    title="Next"
+                >
+
+                    <i class="fa-solid fa-forward-step"></i>
+
+                </button>
+
+                <button
+                    id="repeatBtn"
+                    title="Repeat"
+                >
+
+                    <i class="fa-solid fa-repeat"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progressBar"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- VOLUME -->
+
+        <div class="player-right">
+
+            <button id="volumeBtn">
+
+                <i class="fa-solid fa-volume-high"></i>
+
+            </button>
+
+            <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+            >
+
+            <button id="queueBtn">
+
+                <i class="fa-solid fa-list"></i>
+
+            </button>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- ================= QUEUE ================= -->
+
+<div
+    class="queue-panel"
+    id="queuePanel"
+>
+
+    <div class="queue-header">
+
+        <div>
+
+            <h3>
+                Queue
+            </h3>
+
+            <span id="queueCount">
+                17 songs
+            </span>
+
+        </div>
+
+        <button id="closeQueue">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+    <div id="queueList"></div>
+
+</div>
+
+
+<!-- OVERLAY -->
+
+<div
+    class="overlay"
+    id="overlay"
+></div>
+
+
+<!-- AUDIO -->
+
+<audio id="audioPlayer"></audio>
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
