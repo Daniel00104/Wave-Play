@@ -248,6 +248,24 @@ const overlay =
 const heroPlay =
     document.getElementById("heroPlay");
 
+const soundcloudLink =
+    document.getElementById("soundcloudLink");
+
+fetch("soundcloud.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Could not load SoundCloud configuration");
+        }
+
+        return response.json();
+    })
+    .then(config => {
+        if (config.url && soundcloudLink) {
+            soundcloudLink.href = config.url;
+        }
+    })
+    .catch(() => {});
+
 
 /* =========================================
    STATE
